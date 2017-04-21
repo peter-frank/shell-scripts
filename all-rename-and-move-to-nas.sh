@@ -2,6 +2,15 @@
 # verschiebt korrekt benamte jpegs ins nas backup
 nas="/media/peter/usb_backup/PIC-SYNC-NAS"
 from="/home/peter/Bilder/RenamedPics/"
+echo "Sicher das alle Daten von $from nach $nas kopiert werden sollen (y/n)?"
+read x
+if [ "$x" != "y" ]
+then
+  echo "ok dann nicht"
+  exit
+fi
+echo "exit 2"
+exit
 move-to-default-with-args.sh jpg
 move-to-default-with-args.sh mov
 move-to-default-with-args.sh mp4
